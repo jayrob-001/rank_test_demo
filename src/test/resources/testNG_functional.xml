@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Rank test demo" verbose="1" parallel="tests" thread-count="1" configfailurepolicy="continue">
+
+    <parameter name="BaseURI" value="https://www.rank.com/en/index.html"/>
+
+    <test name="MeccaLoginTest" annotations="JDK" preserve-order="true">
+        <classes>
+            <class name="functional.testSuite.MeccaLoginTest"/>
+        </classes>
+    </test>
+
+
+</suite>

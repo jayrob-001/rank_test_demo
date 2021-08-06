@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="SWAPI test demo" verbose="1" parallel="tests" thread-count="1" configfailurepolicy="continue">
+
+    <parameter name="BaseURI" value="https://swapi.dev/api/"/>
+
+    <test name="GetPeopleTest" annotations="JDK" preserve-order="true">
+        <classes>
+            <class name="integration.testSuite.people.GetPeopleTest"/>
+        </classes>
+    </test>
+
+    <test name="GetPersonTest" annotations="JDK" preserve-order="true">
+        <classes>
+            <class name="integration.testSuite.people.GetPersonTest"/>
+        </classes>
+    </test>
+
+    <test name="getFilmsTest" annotations="JDK" preserve-order="true">
+        <classes>
+            <class name="integration.testSuite.film.getFilmsTest"/>
+        </classes>
+    </test>
+
+    <test name="getFilmsTest" annotations="JDK" preserve-order="true">
+        <classes>
+            <class name="integration.testSuite.film.getFilmsTest"/>
+        </classes>
+    </test>
+
+</suite>

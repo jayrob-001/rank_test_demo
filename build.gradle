@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.32'
+
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.16'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
+    implementation group: 'io.rest-assured', name: 'json-schema-validator', version: '3.0.0'
+
+    implementation group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: '1.9.13'
+    testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
+    implementation group: 'com.aventstack', name: 'extentreports', version: '5.0.8'
+
+    implementation('org.seleniumhq.selenium:selenium-java:3.141.59')
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '4.4.3'
+    testImplementation group: 'io.github.bonigarcia', name: 'selenium-jupiter', version: '3.4.0'
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
