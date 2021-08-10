@@ -11,7 +11,7 @@ import java.util.Properties;
 public class PropertiesReader {
 
     private Properties properties = new Properties();
-    private String propertiesFilePath = System.getProperty("user.dir") + "/src/main/resources/properties/";
+    private String propertiesFilePath = System.getProperty("user.dir") + "/src/test/resources/properties/";
     private InputStream inputStream = null;
 
     public Properties getApiPropertiesReader() {

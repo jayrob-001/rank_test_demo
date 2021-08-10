@@ -7,7 +7,7 @@
 
     <test name="GetPeopleTest" annotations="JDK" preserve-order="true">
         <classes>
-            <class name="integration.testSuite.people.GetPeopleTest"/>
+            <class name="integration.testSuite.people.GetPersonListTest"/>
         </classes>
     </test>
 
@@ -17,15 +17,15 @@
         </classes>
     </test>
 
-    <test name="getFilmsTest" annotations="JDK" preserve-order="true">
+    <test name="getFilmTest" annotations="JDK" preserve-order="true">
         <classes>
-            <class name="integration.testSuite.film.getFilmsTest"/>
+            <class name="integration.testSuite.film.GetFilmTest"/>
         </classes>
     </test>
 
     <test name="getFilmsTest" annotations="JDK" preserve-order="true">
         <classes>
-            <class name="integration.testSuite.film.getFilmsTest"/>
+            <class name="integration.testSuite.film.GetFilmListTest"/>
         </classes>
     </test>
 

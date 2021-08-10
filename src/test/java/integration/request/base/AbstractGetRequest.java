@@ -1,6 +1,5 @@
 package integration.request.base;
 
-
 import integration.client.AbstractRequest;
 import integration.constants.RequestType;
 

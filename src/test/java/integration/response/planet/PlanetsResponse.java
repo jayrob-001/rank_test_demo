@@ -5,8 +5,7 @@ package integration.response.planet;
 
 import integration.client.AbstractRequest;
 import integration.client.AbstractResponse;
-import integration.model.People;
-import integration.model.Planets;
+import integration.model.PlanetList;
 
 import java.io.IOException;
 
@@ -17,8 +16,8 @@ public class PlanetsResponse extends AbstractResponse {
     }
 
     @Override
-    public Planets getResponseObject() throws IOException {
-        return getResponseObject(People.class);
+    public PlanetList getResponseObject() throws IOException {
+        return getResponseObject(PlanetList.class);
     }
 
     @Override

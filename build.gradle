@@ -37,6 +37,22 @@ dependencies {
 
 }
 
+def suite1 = project.hasProperty("suite1")
+def suite2 = project.hasProperty("suite2")
 test {
-    useJUnitPlatform()
+    useTestNG() {
+        if(suite1) {
+            suites "src/test/resources/testNG_integration.xml"
+        }
+        if(suite2) {
+            suites "src/test/resources/testNG_functional.xml"
+        }
+    }
+    options {
+        systemProperties(System.getProperties())
+    }
 }
+
+
+
+

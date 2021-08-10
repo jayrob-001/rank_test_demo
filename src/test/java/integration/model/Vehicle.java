@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
+import java.net.URL;
 import java.util.List;
 
 @Getter
@@ -14,14 +15,12 @@ public class Vehicle extends AbstractObject{
     private String name;
     private String model;
     private String manufacturer;
-    //cost_in_credits
     private Double length;
     private Long max_atmosphering_speed;
     private Integer crew;
     private Integer passengers;
-    private Integer cargo_capacity;
-    //consumables
+    private String cargo_capacity;
     private String vehicle_class;
-    private List<Person> pilots;
-    private List<Film> films;
+    private List<URL> pilots;
+    private List<URL> films;
 }

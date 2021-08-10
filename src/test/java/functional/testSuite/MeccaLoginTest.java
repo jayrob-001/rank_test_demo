@@ -10,7 +10,7 @@ public class MeccaLoginTest extends TestBase {
     @Test
     public void meccaLoginTest() {
 
-        driver.get("https://www.rank.com/");
+        getDriver().get(properties.getProperty("base_url"));
 
         RankInternational rankHomePage = new RankInternational(getDriver());
 

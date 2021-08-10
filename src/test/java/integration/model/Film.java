@@ -8,7 +8,6 @@ import java.net.URL;
 import java.util.Date;
 import java.util.List;
 
-
 @Getter
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -19,11 +18,11 @@ public class Film {
     private String director;
     private String producer;
     private Date release_date;
-    private List<Character> characters;
-    private List<Planet> planets;
-    private List<Starship> starships;
-    private List<Vehicle> vehicles;
-    private List<Species> species;
+    private List<URL> characters;
+    private List<URL> planets;
+    private List<URL> starships;
+    private List<URL> vehicles;
+    private List<URL> species;
     private Date created;
     private Date edited;
     private URL url;

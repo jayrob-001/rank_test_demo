@@ -6,7 +6,6 @@ package integration.response.film;
 import integration.client.AbstractRequest;
 import integration.client.AbstractResponse;
 import integration.model.Film;
-import integration.model.People;
 
 import java.io.IOException;
 

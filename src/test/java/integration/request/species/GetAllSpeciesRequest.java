@@ -1,6 +1,5 @@
 package integration.request.species;
 
-
 import integration.request.base.AbstractGetRequest;
 
 public class GetAllSpeciesRequest extends AbstractGetRequest {

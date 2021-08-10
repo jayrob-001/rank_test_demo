@@ -2,7 +2,7 @@ package integration.response.people;
 
 import integration.client.AbstractRequest;
 import integration.client.AbstractResponse;
-import integration.model.Planet;
+import integration.model.Person;
 
 import java.io.IOException;
 
@@ -13,8 +13,8 @@ public class PersonResponse extends AbstractResponse {
     }
 
     @Override
-    public PersonResponse getResponseObject() throws IOException {
-        return getResponseObject(Planet.class);
+    public Person getResponseObject() throws IOException {
+        return getResponseObject(Person.class);
     }
 
     @Override

@@ -2,7 +2,7 @@ package integration.response.species;
 
 import integration.client.AbstractRequest;
 import integration.client.AbstractResponse;
-import integration.model.Planet;
+import integration.model.Species;
 
 import java.io.IOException;
 
@@ -13,8 +13,8 @@ public class SpeciesResponse extends AbstractResponse {
     }
 
     @Override
-    public SpeciesResponse getResponseObject() throws IOException {
-        return getResponseObject(Planet.class);
+    public Species getResponseObject() throws IOException {
+        return getResponseObject(Species.class);
     }
 
     @Override

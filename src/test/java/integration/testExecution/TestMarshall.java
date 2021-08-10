@@ -5,21 +5,25 @@ import com.github.fge.jsonschema.cfg.ValidationConfiguration;
 import com.github.fge.jsonschema.main.JsonSchemaFactory;
 import integration.client.AbstractRequest;
 import integration.client.AbstractResponse;
-import integration.reporting.ReportUtil;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import lombok.extern.slf4j.Slf4j;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import properties.PropertiesReader;
+import reporting.ReportUtil;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.Properties;
 
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
+@Slf4j
 public abstract class TestMarshall {
 
 
@@ -29,11 +33,13 @@ public abstract class TestMarshall {
     protected AbstractRequest request;
     protected AbstractResponse response;
 
-    public ReportUtil reportUtil = new ReportUtil();
+    protected Properties properties = new PropertiesReader().getApiPropertiesReader();
+    public static ReportUtil reportUtil = new ReportUtil();
 
     @BeforeSuite
     public void setupBaseURL(ITestContext context) {
-        RestAssured.baseURI = context.getCurrentXmlTest().getParameter("BaseURI");
+        RestAssured.baseURI = properties.getProperty("base_uri");
+        RestAssured.basePath = properties.getProperty("base_path");
     }
 
 //    @BeforeTest
@@ -42,8 +48,10 @@ public abstract class TestMarshall {
     @BeforeMethod
     public void setUp(Method method) throws IOException {
         reportUtil.setUp(method);
+
         this.request = getRequest();
         this.response = getResponse();
+
     }
 
     @AfterMethod

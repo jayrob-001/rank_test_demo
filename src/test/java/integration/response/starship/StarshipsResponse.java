@@ -2,7 +2,7 @@ package integration.response.starship;
 
 import integration.client.AbstractRequest;
 import integration.client.AbstractResponse;
-import integration.model.AllSpecies;
+import integration.model.StarshipList;
 
 import java.io.IOException;
 
@@ -13,8 +13,8 @@ public class StarshipsResponse extends AbstractResponse {
     }
 
     @Override
-    public AllSpecies getResponseObject() throws IOException {
-        return getResponseObject(StarshipsResponse.class);
+    public StarshipList getResponseObject() throws IOException {
+        return getResponseObject(StarshipList.class);
     }
 
     @Override

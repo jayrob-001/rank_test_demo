@@ -1,6 +1,7 @@
 package integration.client;
 
 import integration.constants.RequestType;
+import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import lombok.NoArgsConstructor;
@@ -65,6 +66,10 @@ public abstract class AbstractRequest {
     }
 
     public String getBasePath() {
+        log.info("basePath: " + basePath);
+        log.info(RestAssured.basePath);
+        log.info(RestAssured.rootPath);
+
         return basePath;
     }
 

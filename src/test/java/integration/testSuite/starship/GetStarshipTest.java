@@ -1,19 +1,30 @@
 package integration.testSuite.starship;
 
-import integration.builders.planet.GetPlanetRequestBuilder;
 import integration.client.AbstractRequest;
 import integration.client.AbstractResponse;
-import integration.response.planet.PlanetResponse;
+import integration.model.Starship;
+import integration.request.starship.GetStarshipRequest;
+import integration.response.starship.StarshipResponse;
 import integration.testExecution.TestMarshall;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import java.io.IOException;
 
 public class GetStarshipTest extends TestMarshall {
     @Override
     protected AbstractRequest getRequest() {
-        return new GetPlanetRequestBuilder().withId("1").build();
+        return new GetStarshipRequest("2");
     }
 
     @Override
     protected AbstractResponse getResponse() {
-        return new PlanetResponse(request);
+        return new StarshipResponse(request);
+    }
+
+    @Test
+    public void getStarshipTest() throws IOException, ClassNotFoundException {
+        Starship result = (Starship) response.getResponseObject();
+        Assert.assertEquals(result.getName(), "CR90 corvette");
     }
 }

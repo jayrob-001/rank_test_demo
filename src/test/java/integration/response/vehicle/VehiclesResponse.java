@@ -2,7 +2,7 @@ package integration.response.vehicle;
 
 import integration.client.AbstractRequest;
 import integration.client.AbstractResponse;
-import integration.model.Vehicles;
+import integration.model.VehicleList;
 
 import java.io.IOException;
 
@@ -13,8 +13,8 @@ public class VehiclesResponse extends AbstractResponse {
     }
 
     @Override
-    public Vehicles getResponseObject() throws IOException {
-        return getResponseObject(Vehicles.class);
+    public VehicleList getResponseObject() throws IOException {
+        return getResponseObject(VehicleList.class);
     }
 
     @Override

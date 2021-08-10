@@ -1,6 +1,5 @@
 package integration.request.starship;
 
-
 import integration.request.base.AbstractGetRequest;
 
 public class GetStarshipsRequest extends AbstractGetRequest {

@@ -5,8 +5,7 @@ package integration.response.film;
 
 import integration.client.AbstractRequest;
 import integration.client.AbstractResponse;
-import integration.model.Films;
-import integration.model.People;
+import integration.model.FilmList;
 
 import java.io.IOException;
 
@@ -17,8 +16,8 @@ public class FilmsResponse extends AbstractResponse {
     }
 
     @Override
-    public Films getResponseObject() throws IOException {
-        return getResponseObject(Films.class);
+    public FilmList getResponseObject() throws IOException {
+        return getResponseObject(FilmList.class);
     }
 
     @Override

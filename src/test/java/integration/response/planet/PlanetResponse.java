@@ -13,7 +13,7 @@ public class PlanetResponse extends AbstractResponse {
     }
 
     @Override
-    public PlanetResponse getResponseObject() throws IOException {
+    public Planet getResponseObject() throws IOException {
         return getResponseObject(Planet.class);
     }
 

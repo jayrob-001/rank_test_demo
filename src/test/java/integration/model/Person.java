@@ -7,7 +7,6 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import java.net.URL;
 import java.util.List;
 
-
 @Getter
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -20,8 +19,8 @@ public class Person extends AbstractObject {
     private String birth_year;
     private String gender;
     private URL homeworld;
-    private List<String> films;
-    private List<String> species;
-    private List<String> vehicles;
-    private List<String> starships;
+    private List<URL> films;
+    private List<URL> species;
+    private List<URL> vehicles;
+    private List<URL> starships;
 }

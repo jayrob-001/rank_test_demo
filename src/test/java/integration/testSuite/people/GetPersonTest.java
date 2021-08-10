@@ -4,9 +4,12 @@ import integration.client.AbstractRequest;
 import integration.client.AbstractResponse;
 import integration.model.Person;
 import integration.request.people.GetPeopleRequest;
+import integration.request.people.GetPersonRequest;
 import integration.response.people.PeopleResponse;
+import integration.response.people.PersonResponse;
 import integration.testExecution.TestMarshall;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -17,21 +20,23 @@ public class GetPersonTest extends TestMarshall {
 
     @Override
     protected AbstractRequest getRequest() {
-        return new GetPeopleRequest();
+        return new GetPersonRequest("2");
     }
 
     @Override
     protected AbstractResponse getResponse() {
-        return new PeopleResponse(request);
+        return new PersonResponse(request);
     }
 
     @Test
-    public void getPeopleTest() throws IOException {
-        PeopleResponse response = (PeopleResponse) this.response;
-        List<Person> results = response.getResponseObject().getResults();
+    public void getPersonTest() throws IOException, ClassNotFoundException {
+//        PersonResponse response = (PersonResponse) this.response;
+        Person result = (Person) response.getResponseObject();
 
-        for (Person person : results) {
-            log.info("person.getName(): " + person.getName());
-        }
+        log.info("person.getName(): " + result.getName());
+
+        Assert.assertEquals(result.getName(), "C-3PO");
+
+//        validateSchema(response.getResponse(), "person.json");
     }
 }

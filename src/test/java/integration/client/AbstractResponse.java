@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
+import org.testng.Assert;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -59,7 +60,8 @@ public abstract class AbstractResponse {
         } catch (Exception e) {
             log.error("ERROR: ", e.getMessage());
         }
-//        Assert.assertEquals(200, getResponseCode());
+//        log.info(response.asPrettyString());
+        Assert.assertEquals(200, getResponseCode());
         return  response;
     }
 
